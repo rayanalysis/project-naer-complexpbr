@@ -6,5 +6,5 @@ gl-depth-zero-to-one #f
 gl-cube-map-seamless 1
 framebuffer-multisample 1
 multisamples 8
-win-size 1920 1080
+win-size 1280 720
 window-title Project Naer
