@@ -1,12 +1,12 @@
+complexpbr screenshots:
+<img src="https://cdn.discordapp.com/attachments/533048345791299634/1168396045747765248/nissan_rs13_20231029_214825.png?ex=65519c9d&is=653f279d&hm=e9e45732a6b449d01dbc87c2efbc403c72c8ad571e8699468bbc69a1c90bc779&"/>
+<img src="https://cdn.discordapp.com/attachments/533048345791299634/1168393297492987914/nissan_rs13_20231029_213617.png?ex=65519a0d&is=653f250d&hm=f24cfc25ba7a9d09c6ddd79b2d4bcab47b391aa2e9ddace21048b7896644ae6b&"/>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Version-v0.8.0-blue.svg" />
   <img src="https://img.shields.io/badge/Panda3D-1.10.13-blue.svg" />
   <img src="https://img.shields.io/badge/Python-3.7-blue.svg" />
   <img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg" />
-</p>
-
-<p align="center">
-  <img src="content\images\github\preview.gif" />
 </p>
 
 <img src="content\images\github\logo.png" align="right"/>
@@ -35,7 +35,11 @@ automatically and added to the corresponding menu.
 
 Screenshots
 ===========
+complexpbr screenshots:
+<img src="https://cdn.discordapp.com/attachments/533048345791299634/1168396045747765248/nissan_rs13_20231029_214825.png?ex=65519c9d&is=653f279d&hm=e9e45732a6b449d01dbc87c2efbc403c72c8ad571e8699468bbc69a1c90bc779&"/>
+<img src="https://cdn.discordapp.com/attachments/533048345791299634/1168393297492987914/nissan_rs13_20231029_213617.png?ex=65519a0d&is=653f250d&hm=f24cfc25ba7a9d09c6ddd79b2d4bcab47b391aa2e9ddace21048b7896644ae6b&"/>
 
+simplepbr screenshots:
 <img src="content\images\github\garage.png"/>
 <img src="content\images\github\bodyshop.png"/>
 <img src="content\images\github\mainmenu.png"/>
