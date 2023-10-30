@@ -2,6 +2,7 @@ import os
 import math
 
 import panda3d.core
+from panda3d.core import Vec4
 import direct.task.Task
 import direct.gui.DirectGui
 import direct.showbase.ShowBase
@@ -12,6 +13,8 @@ import ui
 import car
 import ground
 import library.io
+
+import complexpbr
 
 panda3d.core.loadPrcFile("config/release.prc")
 
@@ -49,20 +52,25 @@ class Main(direct.showbase.ShowBase.ShowBase):
 
         super().__init__(self)
         self.font = self.loader.loadFont(self.PATH_FONT_MENU)
-        self.window_resolution = (self.win.getXSize(), self.win.getYSize())
+        self.window_resolution = (1280,720)
 
         self.splashscreen = ui.SplashScreen(main=self)
 
         self.config_json = library.io.get_json(path=Main.PATH_CONFIG_JSON)
 
-        library.simplepbr.init(env_map=self.get_cubemap_path(cubemap=self.config_json["defaults"]["cubemap"]),
-                               use_occlusion_maps=True,
-                               use_emission_maps=True,
-                               use_normal_maps=True,
-                               enable_shadows=True,
-                               use_330=True)
+        complexpbr.apply_shader(self.render)
+        complexpbr.screenspace_init()
+        base.screen_quad.set_shader_input("bloom_intensity", 0.7)
+        base.screen_quad.set_shader_input("bloom_threshold", 0.3)
+        base.screen_quad.set_shader_input("bloom_blur_width", 20)
+        base.screen_quad.set_shader_input("bloom_samples", 8)
+        base.screen_quad.set_shader_input('ssr_samples', 0)
+        base.screen_quad.set_shader_input('ssao_samples', 8)
+        base.screen_quad.set_shader_input('hsv_r', 1.0)
+        base.screen_quad.set_shader_input('hsv_g', 1.1)
+        base.screen_quad.set_shader_input('hsv_b', 1.0)
 
-        self.render.setAntialias(panda3d.core.AntialiasAttrib.MMultisample)
+        # self.render.setAntialias(panda3d.core.AntialiasAttrib.MMultisample)
 
         self.autorotate = True
         self.camera_node = None
@@ -101,6 +109,7 @@ class Main(direct.showbase.ShowBase.ShowBase):
         light_top.setAttenuation((0, 0, 0.06))
         self.light_top_node = self.render.attachNewNode(light_top)
         self.light_top_node.setPos((0, 0, 7))
+        light_top.set_color(Vec4(5,5,5,1))
         self.render.setLight(self.light_top_node)
         self.ground.set_light(light=self.light_top_node)
 
@@ -114,30 +123,35 @@ class Main(direct.showbase.ShowBase.ShowBase):
         self.light_shadow_node = self.render.attachNewNode(light_shadow)
         self.light_shadow_node.setPos(0, 1, 12)
         self.light_shadow_node.lookAt(0, 0, 0)
+        light_shadow.set_color(Vec4(5,5,5,1))
         self.ground.set_light(light=self.light_shadow_node)
 
         light_left = direct.showbase.ShowBase.PointLight("LeftLight")
         light_left.setAttenuation((0, 0, 0.001))
         light_node_left = self.render.attachNewNode(light_left)
         light_node_left.setPos((21, 0, 5))
+        light_left.set_color(Vec4(5,5,5,1))
         self.render.setLight(light_node_left)
 
         light_right = direct.showbase.ShowBase.PointLight("RightLight")
         light_right.setAttenuation((0, 0, 0.001))
         light_node_right = self.render.attachNewNode(light_right)
         light_node_right.setPos((-21, 0, 5))
+        light_right.set_color(Vec4(5,5,5,1))
         self.render.setLight(light_node_right)
 
         light_front = direct.showbase.ShowBase.PointLight("FrontLight")
         light_front.setAttenuation((0, 0, 0.004))
         light_node_front = self.render.attachNewNode(light_front)
         light_node_front.setPos((0, -12, 6))
+        light_front.set_color(Vec4(5,5,5,1))
         self.render.setLight(light_node_front)
 
         light_rear = direct.showbase.ShowBase.PointLight("RearLight")
         light_rear.setAttenuation((0, 0, 0.006))
         light_node_rear = self.render.attachNewNode(light_rear)
         light_node_rear.setPos((0, 12, 6))
+        light_rear.set_color(Vec4(5,5,5,1))
         self.render.setLight(light_node_rear)
 
     def initialize_camera(self) -> None:
