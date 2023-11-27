@@ -1,0 +1,6 @@
+{
+  "defaults": {
+    "cubemap": "lightbars",
+    "ground": "asphalt",
+    "car": "nissan_rs13"}
+}
