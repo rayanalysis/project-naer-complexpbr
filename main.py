@@ -7,8 +7,6 @@ import direct.task.Task
 import direct.gui.DirectGui
 import direct.showbase.ShowBase
 
-import library.simplepbr
-
 import ui
 import car
 import ground
