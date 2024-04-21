@@ -1,7 +1,7 @@
 complexpbr screenshots:
-<img src="https://cdn.discordapp.com/attachments/533048345791299634/1168457405747703868/nissan_rs13_20231030_015220.png?ex=6551d5c2&is=653f60c2&hm=b563667916d0db8206e5d1b1f6534b29ca2bd2c010acff52505c8b81e70ba7d4&"/>
-<img src="https://cdn.discordapp.com/attachments/533048345791299634/1168396045747765248/nissan_rs13_20231029_214825.png?ex=65519c9d&is=653f279d&hm=e9e45732a6b449d01dbc87c2efbc403c72c8ad571e8699468bbc69a1c90bc779&"/>
-<img src="https://cdn.discordapp.com/attachments/533048345791299634/1168393297492987914/nissan_rs13_20231029_213617.png?ex=65519a0d&is=653f250d&hm=f24cfc25ba7a9d09c6ddd79b2d4bcab47b391aa2e9ddace21048b7896644ae6b&"/>
+![beige_screen_2](https://github.com/rayanalysis/project-naer-complexpbr/assets/3117958/8db18214-b1ba-4d49-a4eb-e4be6781c412)
+
+![silver_screen_1](https://github.com/rayanalysis/project-naer-complexpbr/assets/3117958/90e0fd5a-348c-4303-992c-157bba64b258)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-v0.8.0-blue.svg" />
